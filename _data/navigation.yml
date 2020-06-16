@@ -2,7 +2,7 @@ docs:
   - title: Getting Started
     children:
       - title: "Product Info"
-        url: /docs/quick-start-guide/
+        url: /docs/info/
       - title: "Requirements"
         url: /docs/requirements/
       - title: "Installation"

@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: IBM Tririga Assistant
+title: IBM TRIRIGA Assistant
 email: na@ibm.com
 description: >- # this means to ignore newlines until "baseurl:"
   TRIRIGA Assistant is an AI chatbot powered by the IBM Watson Assistant Service. It offers a brand new experience for employees to engage with their workplace services. It allows employees to make room reservations, report issues or lookup people using natural language.
@@ -28,6 +28,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Build settings
 theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: "contrast"
+
 #plugins:
 #  - jekyll-feed
 
