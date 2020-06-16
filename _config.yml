@@ -22,7 +22,7 @@ title: IBM TRIRIGA Assistant
 email: na@ibm.com
 description: >- # this means to ignore newlines until "baseurl:"
   TRIRIGA Assistant is an AI chatbot powered by the IBM Watson Assistant Service. It offers a brand new experience for employees to engage with their workplace services. It allows employees to make room reservations, report issues or lookup people using natural language.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "documentation-testing" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
