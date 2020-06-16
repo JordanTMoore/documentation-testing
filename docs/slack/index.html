@@ -1,0 +1,488 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Slack for TRIRIGA Assistant - IBM TRIRIGA Assistant</title>
+<meta name="description" content="Steps for adding your own slack integration for your employees using TRIRIGA Assistant.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="IBM TRIRIGA Assistant">
+<meta property="og:title" content="Slack for TRIRIGA Assistant">
+<meta property="og:url" content="http://localhost:4000/docs/slack/">
+
+
+  <meta property="og:description" content="Steps for adding your own slack integration for your employees using TRIRIGA Assistant.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/docs/slack/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IBM TRIRIGA Assistant Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--home">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IBM TRIRIGA Assistant
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/info/">Product Info</a></li>
+          
+            <li><a href="/docs/requirements/">Requirements</a></li>
+          
+            <li><a href="/docs/installation/">Installation</a></li>
+          
+            <li><a href="/docs/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Usage</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/usage/">Using your Assistant</a></li>
+          
+            <li><a href="/docs/update">Updating Data</a></li>
+          
+            <li><a href="/docs/bookings/">Room Bookings</a></li>
+          
+            <li><a href="/docs/srs/">Service Requests</a></li>
+          
+            <li><a href="/docs/locate/">Locate</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Extensions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/slack/" class="active">Slack</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Support</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/troubleshooting/">Troubleshooting</a></li>
+          
+            <li><a href="/docs/logging/">Logging</a></li>
+          
+            <li><a href="/docs/revoke/">Revoking Data</a></li>
+          
+            <li><a href="/docs/support/">Contacting Support</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">Slack for TRIRIGA Assistant</h1>
+    
+    <h1 id="tririga-assistant-slackbot">TRIRIGA Assistant Slackbot</h1>
+<p><img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" alt="version" />
+<img src="https://img.shields.io/badge/python-3.10-blue.svg" alt="python" />
+<img src="https://img.shields.io/badge/semver-2.0.0-blue.svg?cacheSeconds=2592000" alt="semver" />
+<img src="https://img.shields.io/badge/TRIRIGA-3.6/10.6-orange.svg?cacheSeconds=2592000" alt="TRIRIGA" />
+<img src="https://img.shields.io/badge/TRIRIGA%20Assistant-1.0.4-orange.svg" alt="TRIRIGA Assistant" />
+A python application for empowering users to achieve TRIRIGA functionality through the medium of a convenient and friendly Slack bot.
+Some examples of some features you can expect:</p>
+<ul>
+  <li>Booking Rooms</li>
+  <li>Opening Service Requests</li>
+  <li>Finding Locations or People</li>
+  <li>Answering Questions about your site
+    <h2 id="a-requirements">A. Requirements</h2>
+    <p>The following are required to use this software:</p>
+    <ol>
+      <li>An <a href="https://www.ibm.com/products/tririga">IBM TRIRIGA</a> instance that is accessible via the internet</li>
+      <li>Importing and performing setup steps for <a href="https://github.com/Watson-Personal-Assistant/ibm-tririga-assistant">TRIRIGA Assistant</a> which includes provisioning of TRIRIGA Assistant Services by the IBM AI Applications - TRIRIGA Voice Enablement team.</li>
+      <li>Access to a Slack workspace with privileges to create Slack applications.</li>
+      <li>Docker for deploying in Kubernetes Service: <a href="https://docs.docker.com/docker-for-windows/install/">Windows</a>, <a href="https://docs.docker.com/docker-for-mac/install/">Mac</a>, <a href="https://www.docker.com/get-started">Getting Started</a></li>
+      <li><a href="https://ngrok.com/download">ngrok</a> for local testing
+        <h2 id="b-configuration">B. Configuration</h2>
+        <h3 id="environment-variables">Environment Variables</h3>
+        <p>Tririga-Bot has a handful of environment variables that need to be set.
+First, copy the <code class="language-plaintext highlighter-rouge">sample.env</code> file to <code class="language-plaintext highlighter-rouge">.env</code>.
+Edit the <code class="language-plaintext highlighter-rouge">.env</code> file and provide the following information:</p>
+        <h4 id="app-configurations">App Configurations</h4>
+      </li>
+    </ol>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">PORT</code> - the port the application will respond to.</li>
+  <li><code class="language-plaintext highlighter-rouge">API_KEY</code> - a key needed to prevent unwanted access to this app.  This can be anything you wish.
+    <h4 id="slack-settings">Slack Settings</h4>
+    <p>To complete the Slack Settings you need to create a slack app using Slack UI at <code class="language-plaintext highlighter-rouge">https://api.slack.com/apps</code>.</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">BOT_NAME</code> is the name you gave your bot in slack</li>
+  <li><code class="language-plaintext highlighter-rouge">SLACK_WEBHOOK_SECRET</code> is the verification token slack sends with every request to your bot
+<img src="https://i.imgur.com/w3RkNsj.png" alt="Slack verification and bot name" /></li>
+  <li><code class="language-plaintext highlighter-rouge">SLACK_BOT_USER_TOKEN</code> is the OAuth token for your bot to use to access slack
+<img src="https://i.imgur.com/zSHN9Sa.png" alt="Bot Slack User Token" /></li>
+  <li><code class="language-plaintext highlighter-rouge">OAuth &amp; Permissions</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Scopes</code> add the following <code class="language-plaintext highlighter-rouge">Bot Token Scopes</code>
+        <ul>
+          <li>‘app_mentions:read’</li>
+          <li>‘channels:history’</li>
+          <li>‘chat:write’</li>
+          <li>‘chat:write.customize’</li>
+          <li>‘im:history’</li>
+          <li>‘im:read’</li>
+          <li>‘im:write’</li>
+          <li>‘reactions:read’</li>
+          <li>‘users:read’</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Event Subscriptions</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Enable Events</code> should be ON</li>
+      <li><code class="language-plaintext highlighter-rouge">Request URL</code> should be ‘&lt;URL to bot&gt;/slack’ (when running locally, this will be the <code class="language-plaintext highlighter-rouge">https://xxx.ngrok.io/slack</code> URL. See NGROK section below.)</li>
+      <li><code class="language-plaintext highlighter-rouge">Subscribe to Bot Events</code> add the following events
+        <ul>
+          <li>‘message.channels’</li>
+          <li>‘message.im’</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Interactive Components</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Interactivity</code> should be ON</li>
+      <li><code class="language-plaintext highlighter-rouge">Request URL</code> should be ‘&lt;URL to bot&gt;/slack/handle_action’</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="tririga-assistant-settings">TRIRIGA Assistant Settings</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">TA_INTEGRATION_ID</code> - the Integration ID provided by the IBM AI Applications - TRIRIGA Voice Enablement Team.
+    <h4 id="watson-assistant-settings">Watson Assistant Settings</h4>
+    <p>Optionally, you can connect this slackbot to a Watson Assistant created in your own Watson Assistant Service. The following information can be found on the Assistant’s Settings page after creating the Assistant in your Watson Assistant Service.  Note, without a Skill provided by the IBM AI Applications - TRIRIGA Voice Enablement Team, connecting the Slackbot to Watson Assistant will not access data in TRIRIGA.</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">WA_IAM_KEY</code> - The Service Credentials Api Key.</li>
+  <li><code class="language-plaintext highlighter-rouge">WA_ASSISTANT_ID</code> - The Assistant ID.
+    <h2 id="c-testing-locally">C. Testing Locally</h2>
+    <h5 id="1-start-ngrok">1. Start NGROK</h5>
+    <p>$ ngrok http 8080</p>
+    <h5 id="2-update-both-request-url-in-slack-settings">2. Update both <code class="language-plaintext highlighter-rouge">Request URL</code> in Slack settings</h5>
+    <h5 id="3-build-the-image-using-docker-cli">3. Build the image using Docker CLI</h5>
+    <p>$ docker build .</p>
+    <h5 id="4-start-the-app-using-build-id-from-previous-command">4. Start the app using build ID from previous command</h5>
+
+    <p>$ docker run –env-file .env -p 8080:8080 YOUR_BUILD_ID_HERE</p>
+  </li>
+</ul>
+
+<h5 id="5-talk-to-the-bot-through-slack">5. Talk to the bot through slack</h5>
+<p>Direct Message the bot with <code class="language-plaintext highlighter-rouge">hi</code> to start a conversation.</p>
+
+<h2 id="d-deployment">D. Deployment</h2>
+<h3 id="deploy-as-a-cloud-foundry-application-on-ibm-cloud">Deploy as a cloud foundry application on IBM Cloud</h3>
+<p>Prerequisites: <a href="https://cloud.ibm.com/functions/learn/cli">IBM Cloud CLI</a></p>
+<h5 id="1-copy-the-yamlsamplemanifestyml-to-manifestyml-and-provide-values-as-in-env-file">1. Copy the <code class="language-plaintext highlighter-rouge">yaml/sample.manifest.yml</code> to <code class="language-plaintext highlighter-rouge">manifest.yml</code> and provide values as in <code class="language-plaintext highlighter-rouge">.env</code> file.</h5>
+<h5 id="2-push-the-code-as-a-cloud-foundry-application-using-the-following-command">2. Push the code as a cloud foundry application using the following command.</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ibmcloud cf push my-tririga-bot -f manifest.yml
+</code></pre></div></div>
+
+<h5 id="3-get-the-url-for-the-cloud-foundry-application">3. Get the URL for the cloud foundry application</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ibmcloud cf app my-tririga-bot
+</code></pre></div></div>
+
+<h5 id="4-update-both-request-urls-in-slack">4. Update both Request URLs in Slack</h5>
+<h3 id="deploy-as-a-service-in-ibm-cloud-kubernetes-service-iks">Deploy as a service in IBM Cloud Kubernetes Service (IKS)</h3>
+<p>The <a href="https://github.com/IBM-Cloud/get-started-python/blob/master/README-kubernetes.md">Deploy to IBM Cloud Kubernetes Service Getting Started Guide</a> should be very helpful in this process as well as <a href="https://cloud.ibm.com/kubernetes/overview">IBM Cloud Kubernetes Overview</a>.</p>
+<h5 id="1-push-the-docker-image-to-ibm-cloud-registry-icr-by-tagging-the-docker-build-and-pushing-to-icr--replace-usicrio-with-the-container-registry-domain-in-your-region">1. Push the Docker image to IBM Cloud Registry (ICR) by tagging the Docker build and pushing to ICR.  Replace <code class="language-plaintext highlighter-rouge">us.icr.io</code> with the container registry domain in your region.</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ibmcloud cr namespace-add tririga-bot
+$ docker tag YOUR_BUILD_ID_HERE us.icr.io/tririga-bot/my-tririga-bot:1
+
+$ docker push us.icr.io/tririga-bot/my-tririga-bot:1 ##### 2. Create a cluster in IKS
+$ ibmcloud ks cluster create classic --name my-tririga-bot
+
+$ ibmcloud ks cluster config --cluster my-tririga-bot
+</code></pre></div></div>
+
+<h5 id="3-copy-yamlsampledeploymentyml-to-deploymentyml-and-provide-values-as-in-env-file-as-well-as-registry-domain">3. Copy <code class="language-plaintext highlighter-rouge">yaml/sample.deployment.yml</code> to <code class="language-plaintext highlighter-rouge">deployment.yml</code> and provide values as in <code class="language-plaintext highlighter-rouge">.env</code> file as well as registry domain.</h5>
+<h5 id="4-start-the-app-in-cluster">4. Start the app in cluster</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ kubectl create -f deployment.yml
+</code></pre></div></div>
+
+<h5 id="5-check-the-status-of-the-deployment-and-get-further-details-if-deployment-fails">5. Check the status of the deployment and get further details if deployment fails</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ kubectl get pods
+
+$ kubectl describe pod my-tririga-bot
+</code></pre></div></div>
+
+<p>If having trouble getting Kubernetes to pull the image, see this <a href="https://cloud.ibm.com/docs/containers?topic=containers-registry#imagePullSecret_migrate_api_key">help document on Image Pull Secrets</a></p>
+
+<h5 id="6-expose-port-when-app-is-running">6. Expose port when app is running</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ kubectl expose deployment my-tririga-bot --type NodePort --port 8080 --target-port 8080 ##### 7. Get real port number from `NodePort` value
+$ kubectl describe service my-tririga-bot
+</code></pre></div></div>
+
+<h5 id="8-get-public-ip-address-for-app">8. Get <code class="language-plaintext highlighter-rouge">Public IP</code> address for app</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ibmcloud ks workers --cluster my-tririga-bot
+</code></pre></div></div>
+
+<h5 id="9-update-both-request-urls-in-slack-using-following-template">9. Update both Request URLs in Slack using following template</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://&lt;Public-IP&gt;:&lt;NodePort&gt;/slack
+http://&lt;Public-IP&gt;:&lt;NodePort&gt;/slack/handle_action
+</code></pre></div></div>
+
+<h2 id="built-with">Built With</h2>
+<ul>
+  <li><a href="https://www.ibm.com/cloud">IBMCloud</a> - Service provider and application hosting environment</li>
+  <li><a href="https://cloud.ibm.com/catalog/services/watson-assistant">Watson Assistant</a> - NLU service for understanding user intent and other bot inputs.</li>
+  <li><a href="https://api.slack.com/apps">Slack Apps</a> - The API and framework for communicating to and from Slack</li>
+  <li><a href="https://www.ibm.com/us-en/marketplace/ibm-tririga">IBM TRIRIGA</a> - Facility management software solution by IBM
+    <h2 id="contributing">Contributing</h2>
+    <p>Please read <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> for details on our code of conduct, and the process for submitting pull requests to us.</p>
+    <h2 id="versioning">Versioning</h2>
+    <p>We use <a href="http://semver.org/">SemVer</a> for versioning. For the versions available, see the <a href="https://github.ibm.com/ConsumerIoT/tririga-bot/tags">tags on this repository</a>.</p>
+    <h2 id="license">License</h2>
+    <p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details</p>
+  </li>
+</ul>
+
+
+<h3 class="archive__subtitle">Recent Posts</h3>
+
+
+
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/ta/update/2020/06/16/welcome-to-jekyll.html" rel="permalink">Welcome to v1.04!
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">In this update we explore the possibilities of analytics with IBM TRIRIGA Assistant
+</p>
+  </article>
+</div>
+
+
+
+
+
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 IBM TRIRIGA Assistant. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
