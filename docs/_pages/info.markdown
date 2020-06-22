@@ -17,4 +17,4 @@ TRIRIGA Assistant is an AI chatbot powered by the IBM Watson Assistant Service. 
 
 These instructions will guide you through 1)  provisioning a TRIRIGA Assistant skill on the IBM Cloud, 2) installing and testing the OSLC APIs and 3) installing the chatbot interface into your workplace services apps. It is highly advisable that these steps are performed by a developer that is trained and experienced with IBM TRIRIGA.
 
-![image](images/assistant-1.png)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/info/assistant-1.png)
