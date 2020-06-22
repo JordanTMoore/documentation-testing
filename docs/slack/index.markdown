@@ -16,6 +16,8 @@ sidebar:
 ![semver](https://img.shields.io/badge/semver-2.0.0-blue.svg?cacheSeconds=2592000)
 ![TRIRIGA](https://img.shields.io/badge/TRIRIGA-3.6/10.6-orange.svg?cacheSeconds=2592000)
 ![TRIRIGA Assistant](https://img.shields.io/badge/TRIRIGA%20Assistant-1.0.4-orange.svg)
+
+
 A python application for empowering users to achieve TRIRIGA functionality through the medium of a convenient and friendly Slack bot.
 Some examples of some features you can expect:
 * Booking Rooms

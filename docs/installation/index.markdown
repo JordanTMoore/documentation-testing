@@ -13,7 +13,7 @@ sidebar:
 
 ## Estimated time
 
-This installation should take 5-8 hours to complete, not including the time for IBM to provision the TRIRIGA Assistant skill.
+This installation should take 1-2 hours to complete, not including the time for IBM to provision the TRIRIGA Assistant skill.
 
 ## Steps
 
