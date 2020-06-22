@@ -9,22 +9,19 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>IBM TRIRIGA Assistant - IBM TRIRIGA Assistant</title>
-<meta name="description" content="An assistant for IBM TRIRIGA Workplace Services that enables users to book rooms, make service requests, locate people/places and ask questions with an AI assistant!">
+<!-- begin _includes/seo.html --><title>Upgrading IBM TRIRIGA Assistant - IBM TRIRIGA Assistant</title>
+<meta name="description" content="How to upgrade your IBM TRIRIGA Assistant. Detailed steps to use the latests features and upgrades.">
 
 
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="IBM TRIRIGA Assistant">
-<meta property="og:title" content="IBM TRIRIGA Assistant">
-<meta property="og:url" content="http://localhost:4000/docs/requirements/">
+<meta property="og:title" content="Upgrading IBM TRIRIGA Assistant">
+<meta property="og:url" content="http://localhost:4000/upgrading/">
 
 
-  <meta property="og:description" content="An assistant for IBM TRIRIGA Workplace Services that enables users to book rooms, make service requests, locate people/places and ask questions with an AI assistant!">
-
-
-
+  <meta property="og:description" content="How to upgrade your IBM TRIRIGA Assistant. Detailed steps to use the latests features and upgrades.">
 
 
 
@@ -34,7 +31,10 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/docs/requirements/">
+
+
+
+<link rel="canonical" href="http://localhost:4000/upgrading/">
 
 
 
@@ -166,35 +166,13 @@
         
         <ul>
           
-            <li><a href="/docs/info/">Product Info</a></li>
+            <li><a href="/info/">Product Info</a></li>
           
-            <li><a href="/docs/requirements/" class="active">Requirements</a></li>
+            <li><a href="/requirements/">Requirements</a></li>
           
-            <li><a href="/docs/installation/">Installation</a></li>
+            <li><a href="/installation/">Installation</a></li>
           
-            <li><a href="/docs/upgrading/">Upgrading</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">Usage</span>
-        
-
-        
-        <ul>
-          
-            <li><a href="/docs/usage/">Using your Assistant</a></li>
-          
-            <li><a href="/docs/update">Updating Data</a></li>
-          
-            <li><a href="/docs/bookings/">Room Bookings</a></li>
-          
-            <li><a href="/docs/srs/">Service Requests</a></li>
-          
-            <li><a href="/docs/locate/">Locate</a></li>
+            <li><a href="/upgrading/" class="active">Upgrading</a></li>
           
         </ul>
         
@@ -208,7 +186,7 @@
         
         <ul>
           
-            <li><a href="/docs/slack/">Slack</a></li>
+            <li><a href="/slack/">Slack</a></li>
           
         </ul>
         
@@ -222,13 +200,7 @@
         
         <ul>
           
-            <li><a href="/docs/troubleshooting/">Troubleshooting</a></li>
-          
-            <li><a href="/docs/logging/">Logging</a></li>
-          
-            <li><a href="/docs/revoke/">Revoking Data</a></li>
-          
-            <li><a href="/docs/support/">Contacting Support</a></li>
+            <li><a href="/troubleshooting/">Troubleshooting</a></li>
           
         </ul>
         
@@ -245,18 +217,40 @@
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title">IBM TRIRIGA Assistant</h1>
+      <h1 id="page-title" class="page__title">Upgrading IBM TRIRIGA Assistant</h1>
     
-    <h2 id="prerequisites">Prerequisites</h2>
-
+    <h2 id="reminders">Reminders</h2>
 <ul>
-  <li>TRIRIGA 10.6.1/3.6.0</li>
-  <li>TRIRIGA Workplace Services apps deployed</li>
-  <li>TRIRIGA Request Central and (optionally) TRIRIGA Reserve</li>
-  <li>TRIRIGA instance that is accessible securely from the internet.</li>
+  <li>Please be sure to <strong>backup</strong> your TRIRIGA instance prior to any changes</li>
+  <li>Be aware that your Assistant will take time to provision and upgrade</li>
 </ul>
 
-<p>TRIRIGA Assistant is a SaaS service hosted securely on IBM cloud. The service will need to communicate via secured OSLC APIs to your TRIRIGA instance. This is usually not an issue for TRIRIGA SaaS customers.</p>
+<h3 id="part-1---om-package-import">Part 1 - OM Package Import</h3>
+
+<ol>
+  <li>Create new Object Migration import package selecting the <code class="language-plaintext highlighter-rouge">tri-assistant-*.zip</code> file provided in the om-package folder.</li>
+  <li>Validate and Import the new OM package.</li>
+</ol>
+
+<h3 id="part-2---submit-the-provisioning-request">Part 2 - Submit the Provisioning Request</h3>
+
+<h4 id="step-a-complete-the-provisioning-form">Step A) COMPLETE THE PROVISIONING FORM</h4>
+
+<p>The OM package imported in the part previous contains a form that will execute a process of gathering data for the Assistant and providing that data to IBM.  The form asks for the user name and password for the account created during installation.  This is needed so the IBM’s TRIRIGA Assistant services can make an OSLC call back into your TRIRIGA instance and gather building and room names.</p>
+
+<ol>
+  <li>From the TRIRIGA Main Page, click on My Reports &gt; System Reports, and filter on the Business Object column for <code class="language-plaintext highlighter-rouge">ibmAssistantProvisionOrder</code>.</li>
+  <li>Execute the <code class="language-plaintext highlighter-rouge">TRIRIGA Assistant Provision Record Query</code>.</li>
+  <li>Click on the only record found.  Don’t add a record, just modify the existing record that was provided in the OM package.</li>
+  <li>Enter the URL for your TRIRIGA instance. Note: The instance must be accessible without a VPN and through HTTPS. Include the complete path, starting with <code class="language-plaintext highlighter-rouge">https://</code>.</li>
+  <li>Enter the user name and password for the assistant account you created earlier.</li>
+  <li>Enter your name and email address so we can contact you when the assistant services have been provisioned for your instance.</li>
+  <li>Click Submit.</li>
+</ol>
+
+<h4 id="step-b-wait-for-integration-id-from-ibm">Step B) WAIT FOR INTEGRATION ID FROM IBM</h4>
+
+<p>Once the information has been successfully received by the IBM TRIRIGA Assistant services, you will be contacted through email at the email address provided on the form.  Once you receive the Integration ID, you may proceed with the rest of the steps.  If you do not receive a response from IBM in a week, please contact your IBM representative.</p>
 
 
 <h3 class="archive__subtitle">Recent Posts</h3>
@@ -278,8 +272,9 @@
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">In this update we explore the possibilities of analytics with IBM TRIRIGA Assistant
-</p>
+    <p class="archive__item-excerpt" itemprop="description">In this update we explore the possibilities of analytics with IBM TRIRIGA
+Assistant. With Version 1.0.4 we are introducing a new dashboard for TRIRIGA
+Admini...</p>
   </article>
 </div>
 
